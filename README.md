@@ -8,7 +8,7 @@ design patterns in C
 3. Strategy pattern
 4. Observer pattern
 5. Reactor pattern
-6. Idiomatic exprssions
+6. Idiomatic expressions
 
 This repo is a practice run based on Adam Thornhill's book on Patterns in C
 
