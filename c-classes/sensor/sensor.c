@@ -1,4 +1,5 @@
 #include "sensor.h"
+#include <stdlib.h>
 
 void sensor_init(Sensor* const me) {
 
@@ -22,4 +23,22 @@ int sensor_get_update_frequency(const Sensor* const me) {
 
 int sensor_get_value(const Sensor* const me) {
     return me->value;
+}
+
+Sensor* sensor_create() {
+    Sensor* me = (Sensor*) malloc(sizeof(Sensor));
+
+    if(me != NULL) {
+        sensor_init(me);
+    }
+
+    return me;
+}
+
+void sensor_destroy(Sensor* const me) {
+    if(me != NULL) {
+        sensor_cleanup(me);
+    }
+
+    free(me);
 }
