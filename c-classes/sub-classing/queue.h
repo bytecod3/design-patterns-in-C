@@ -23,22 +23,22 @@
  };
 
  /* constructors and desctructors */
- void Queue_init(Queue* const me, 
-    int(*isFullFunction)(Queue* const me),
-    int(*isEmptyFunction)(Queue* const me),
-    void(*insertFunction)(Queue* const me),
-    int(*removeFunction)(Queue* const me)
-);
+ void Queue_init(Queue *const me,
+                 int (*isFullFunction)(Queue *const me),
+                 int (*isEmptyFunction)(Queue *const me),
+                 int (*getSizeFunction)(Queue *const me),
+                 void (*insertFunction)(Queue *const me, int k),
+                 int (*removeFunction)(Queue *const me));
 
-void Queue_cleanup(Queue* const me);
+ void Queue_cleanup(Queue *const me);
 
-/* operations */
-int Queue_isFull(Queue* const me);
-int Queue_isEmpty(Queue* const me);
-int Queue_getSize(Queue* const me);
-void Queue_insert(Queue* const me, int k);
+ /* operations */
+ int Queue_isFull(Queue *const me);
+ int Queue_isEmpty(Queue *const me);
+ int Queue_getSize(Queue *const me);
+ void Queue_insert(Queue *const me, int k);
 
-Queue* Queue_create(void);
-void Queue_destroy(Queue* const me);
+ Queue *Queue_create(void);
+ void Queue_destroy(Queue *const me);
 
 #endif

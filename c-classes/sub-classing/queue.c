@@ -11,7 +11,7 @@ void Queue_init(Queue *const me,
     int (*isFullFunction)(Queue* const me),
     int (*isEmptyFunction)(Queue* const me),
     int (*getSizeFunction)(Queue* const me),
-    void (*insertFunction)(Queue* const me),
+    void (*insertFunction)(Queue* const me, int k),
     int (*removeFunction)(Queue* const me)
 ) {
 
@@ -29,7 +29,7 @@ void Queue_init(Queue *const me,
 }
 
 /* operation cleanup */
-void Queue_cleanup() {}
+void Queue_cleanup(Queue* const me) {}
 
 /* operation isFull() */
 int Queue_isFull(Queue* const me) {
