@@ -35,7 +35,6 @@ struct CachedQueue {
     /* new virtual functions */
     void (*flush)(CachedQueue *const me);
     void (*load)(CachedQueue *const me);
-
 };  
 
 
@@ -52,13 +51,22 @@ void CachedQueue_init(
     /* new virtual functions */
     void (*flush)(CachedQueue *const me),
     void (*load)(CachedQueue *const me)
-
 );
-
 
 void CachedQueue_cleanup(CachedQueue* const me);
 
 /* operations */
+int CachedQueue_isfull(CachedQueue *const me);
+int CachedQueue_isempty(CachedQueue *const me);
+int CachedQueue_getsize(CachedQueue *const me);
+void CachedQueue_insert(CachedQueue *const me, int k);
+int CachedQueue_remove(CachedQueue *const me);
 
+/* new virtual functions */
+void CachedQueue_flush(CachedQueue *const me);
+void CachedQueue_load(CachedQueue *const me);
+
+CachedQueue* CachedQueue_create(void);
+void CachedQueue_destroy(CachedQueue* const me);
 
 #endif
